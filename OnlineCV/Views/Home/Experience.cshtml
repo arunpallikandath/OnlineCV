@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+    
+}
+<div style="margin-top:60px;">
+    <div ng-app="onlineCVApp" ng-controller="HomeController">
+        <div class="row">
+            <div class="col-md-3 col-xs-1 cvTitle">
+               EXPERIENCE
+                <hr style="height:4px;width:50%;background-color:black;margin-left:0px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <ul class="cvKeySkills">
+                    <li class="cvKeySkills" ng-repeat="company in mycv.experience">
+                        <div class="cvSubTitle">
+                            {{company.companyName}}
+                        </div>
+                        <div class="skillDesc">
+                            <ul>
+                                <li ng-repeat="description in company.description">
+                                    {{description}}
+                                </li>
+                            </ul>
+                           
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 hidden-xs">
+            </div>           
+        </div>
+
+
+    </div>
+
+
+</div>

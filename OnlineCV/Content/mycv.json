@@ -1,0 +1,54 @@
+{
+    "fullname": "Arun Kumar Narayanan",
+    "title": "Software Engineering Manager",
+    "email": "arunpallikandath@gmail.com",
+    "phone": "971-559308766",
+    "description": "Highly motivated Software Engineering Manager with 14 years of hands on experience in software development and in project management, proven track record of architecting and delivering reliable and scalable systems in a variety of areas, such as Mobile technologies, Internet/E-commerce, Network management/Security, Health care, Mobile money, messaging services, EAI, etc.",
+    "keyexpertise": [
+        "Native Mobile Applications",
+        "Hybrid Mobile Development",
+        "Web Technologies",
+        "Scalable Systems",
+        "Project Managment",
+        "Process Improvement"
+    ],
+    "skills": [
+        { "heading": "Programming languages", "description": "C#.Net,VB.Net,ASP.Net MVC,PHP, Java, Groovy, Visual Basic, Java script,Node.js, AngularJS, JQuery, Bootstrap, PL/SQL, TSQL, Stored Procedures, Triggers, CSS3, HTML5" },
+        { "heading": "Development Frameworks", "description": "Windows Forms, Web Forms, Web Services, .Net Remoting, LINQ, ADO.NetEntity Framework, Android SDK , CakePHP, Grails Framework, JSON, XML" },
+        { "heading": "Databases Systems", "description": "MySQL, MongoDB, MSSQL, Oracle" },
+        { "heading": "Web Servers", "description": "Tomcat 6 & 7, Apache, IIS7" },
+        { "heading": "Domain Expertise", "description": "Mobile Money, UK & APAC Health care system, Australia Medicare online, Trading, Distribution & Logistics" },
+        { "heading": "Platform & Tools", "description": "Groovy & Grails tools suite, Netbeans and Eclipse, Visual Studio 2008 & 2010, Redmine, SVN, VSTS, VSS, Oracle Toad, MySQL Workbench, Putty, SecureCRT" },
+        { "heading": "Source Control", "description": "SVN, VSS & VSTS, Github" },
+        { "heading": "Managment Tools", "description": "Redmine, Microsoft Project, Jira" }
+    ],
+    "experience": [
+        {
+            "companyName": "CELLEMPOWER FZ LLC, DUBAI",
+            "period": "MAY — 2014 - PRESENT",
+            "designation": "SR.MANAGER, SOFTWARE DEVELOPMENT",
+            "description": [
+                "Mobile application design and development from concept to successful products using Android/Appcelreator/ Intel XDK / HTML5",
+                "Design and development of enterprise web application using Groovy / Grails and Bootstrap with MongoDB to support the business solution which synchronises with mobile application",
+                "Design and development of highly scalable architecture for Sports social networking and live score website using PHP/CakePHP / Memcached, AngularJS, Node.JS, Bootstrap with Mysql Fabric and MongoDB.",
+                "Collaborated with clients, third party software partners and internal teams to develop and launch product enhancements that generated additional revenue opportunities.",
+                "Initiated a comprehensive issue tracking system that improved communication and issue resolution for cross-functional teams and senior management. ",
+                "Primary lead in RFI/RFP, POC and demo activities with new business opportunities."
+            ]
+
+        },
+        {
+            "companyName": "VALORISE FZ LLC, DUBAI",
+            "period": "APR-2013 - MAY-2014",
+            "designation": "SR.MANAGER, SOFTWARE DEVELOPMENT",
+            "description": [
+                "Responsible for complement management of all the software products including the development, architecture, project management, improving the customer experience and marketing strategy.",
+                "Design and development of Mobile KYC business solution using Groovy / Grails with Mysql , MongoDB and Pentaho. Successfully integrated Fingerprint scanning and OCR into Android application. ",
+                "Integrated Apache Lucene into Grails/Groovy for searching the blacklisted customers from various sources.",
+                "Integrated of SNMP, SMSC services and other 3rd party web services into Grails groovy project. ",
+                "Developed BRDs and PRDs for the company product line with particular emphasis on Data aggregation and process integration frameworks, core technology and infrastructure.Linux server administration including SVN, Redmine, MySQL DB, SMSC, SMPP, Tomcat, Apache etc"
+            ]
+        }
+    ]
+
+}

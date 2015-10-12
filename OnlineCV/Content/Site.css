@@ -1,0 +1,143 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
+    font-family: DINbek-Regular
+}
+.navbar {
+	height: 50px;
+    background-color: #3b3939;
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    max-width: 960px;
+
+}
+
+.navbar-brand > a {
+    padding-left: 0px;
+    padding-right:0px;
+    color:white;
+    font-size:18px;
+    letter-spacing:5px;
+   text-transform:uppercase;
+}
+.navbar-brand .navbar-inverse > a {
+    padding-left: 0px;
+    padding-right:0px;
+    color:white;
+    font-size:18px;
+    letter-spacing:5px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* Custom style */
+.menuMain {
+padding-top: 15px;
+}
+.menuItem {
+padding-top: 0px !important;
+padding-bottom:0px !important;
+border-right : 1px solid white;
+color:white;
+font-size:15px;
+font-family:DINbek-Regular;
+text-transform:uppercase;
+	
+}
+.cvTitle{
+    font-size : 30px;
+    font-family: DINbek-Regular;
+    text-transform:uppercase;
+}
+
+.cvDesc{
+
+    font-family: 'Adobe Caslon Pro';
+    font-size: 18px;
+    font-style: italic;
+    overflow:auto;
+}
+
+.skillDesc{
+
+    font-family: 'Adobe Caslon Pro';
+    font-size: 18px;
+    overflow:auto;
+}
+.cvSubTitle{
+
+    font-family: 'DINbek Bold';
+    font-size: 18px;
+    text-transform:uppercase;
+
+}
+.cvKeyPoints > a{
+    color: black;
+}
+.cvKeyPoints{
+
+    font-family: DINbek-Regular;
+    font-size: 15px;
+    list-style:none;
+    text-transform:uppercase;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    
+}
+
+.cvKeySkills{
+
+    font-family: DINbek-Regular;
+    font-size: 15px;
+    list-style:none;
+    padding-left: 0px;
+    padding-bottom: 15px;
+    
+}
+
+.footer {
+    background-color: #cccccc;
+
+}
+
+.footer-content {
+    margin-left:150px;
+    margin-top: 0px;
+
+}
+
+/* Custom fonts */
+@font-face {
+    font-family: 'DINbek Bold';
+    src: url('../fonts/DINbek Bold.ttf') format('truetype')
+
+}
+
+@font-face {
+    font-family: 'DINbek-Regular';
+    src: url('../fonts/DINBek-Regular.ttf') format('truetype')
+
+}
+
+@font-face {
+    font-family: 'Adobe Caslon Pro';
+    src: url('../fonts/Adobe Caslon Pro.ttf') format('truetype');
+}
