@@ -1,9 +1,11 @@
 ﻿@{
-    
     ViewBag.Title = "Contact";
+    //Layout Set to null, it is a partial view
     Layout = null;
 }
-
+<!-- This page uses angularjs to load its contents 
+     Please note, its form is on _layout.cshtml
+-->
 <div style="margin-top:60px;">
 
     <div class="row">
@@ -17,13 +19,6 @@
             <div id="messages">@ViewBag.Message</div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-8 col-sm-12 cvDesc">
-            You can contact me on arunpallikandath@gmail.com or {{mycv.phone}}
-        </div>
-        <div class="col-md-4 hidden-xs">
-        </div>
-    </div>
     <br />
     <div class="row">
         <div class="col-md-8 col-sm-12">
@@ -32,7 +27,7 @@
                     <label class="control-label">Full name</label>
                 </div>
                 <div class="col-md-8 col-xs-12">
-                    <input type="text" class="form-control" name="fullName" id="fullName" required min="5" maxlength="150"/>
+                    <input type="text" class="form-control" name="fullName" id="fullName" required minlength="5" maxlength="150"/>
                 </div>
             </div>
             </br>
@@ -76,7 +71,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 col-xs-12" style="border-left:1px solid">
+            <div class="cvSubTitle">Reach me :</div>
+            {{mycv.email}}
+            </br>
+            {{mycv.phone}}
 
-    </div>
-    
+        </div>
+    </div>    
 </div>

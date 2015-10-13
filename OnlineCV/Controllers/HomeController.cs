@@ -5,33 +5,83 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
 using System.Web.UI;
-
+/*
+    Main controller of this project, it handles all server actions required for this
+ */
 namespace OnlineCV.Controllers
 {
     public class HomeController : Controller
     {
+        /*
+         * Function which calls at the startup and its view is home page for this project.
+         * This function has been set as default page in RouteConfig.cs
+         * -------------------------------------------------------------------------------
+         * Description       Author      Date           Comments
+         * -------------------------------------------------------------------------------
+         * Created           Arun        12-Oct-2015    
+         * -------------------------------------------------------------------------------
+         */
         public ActionResult Index()
         {
             return View();
         }
 
+        /*
+        * Skill page
+        * This function has been called when the menu SKILLS is clicked. 
+        * -------------------------------------------------------------------------------
+        * Description       Author      Date           Comments
+        * -------------------------------------------------------------------------------
+        * Created           Arun        12-Oct-2015    
+        * -------------------------------------------------------------------------------
+        */
+        [ChildActionOnly]
         public ActionResult Skills()
         {
             return View();
         }
 
+        /*
+        * Experience page
+        * This function has been called when the menu Experience is clicked. 
+        * -------------------------------------------------------------------------------
+        * Description       Author      Date           Comments
+        * -------------------------------------------------------------------------------
+        * Created           Arun        12-Oct-2015    
+        * -------------------------------------------------------------------------------
+        */
+        [ChildActionOnly]
         public ActionResult Experience()
         {
             return View();
         }
 
+        /*
+        * Contact page
+        * This function has been called when the menu Contact is clicked. 
+        * Allows the user to submit queries and it will send as email to owner mail id 
+        * -------------------------------------------------------------------------------
+        * Description       Author      Date           Comments
+        * -------------------------------------------------------------------------------
+        * Created           Arun        12-Oct-2015    
+        * -------------------------------------------------------------------------------
+        */
+        [ChildActionOnly]
         public ActionResult Contact()
         {
-           
-               return View();
-            
-        }
+             return View();
 
+        }
+        /*
+        * 
+        * This function has been called when the submit button is clicked from contact form 
+        * Function to send email using smtp client. 
+        * -------------------------------------------------------------------------------
+        * Description       Author      Date           Comments
+        * -------------------------------------------------------------------------------
+        * Created           Arun        12-Oct-2015    
+        * -------------------------------------------------------------------------------
+        */
         [HttpPost]
         public String ContactSave()
         {
@@ -39,8 +89,9 @@ namespace OnlineCV.Controllers
             String msgFName = Request.Form["fullName"];
             String msgEmail = Request.Form["email"];
             String msgPhone = Request.Form["phone"];
-            String msgSubject = Request.Form["subject"];
+            String msgSubject = "OnlineCV - Enquiry";
             //
+
             SmtpClient client = new SmtpClient();
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.EnableSsl = true;
@@ -54,8 +105,8 @@ namespace OnlineCV.Controllers
             client.Credentials = credentials;
 
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress("aruncvonline@gmail.com");
-            msg.To.Add(new MailAddress(msgEmail));
+            msg.From = new MailAddress(msgEmail);
+            msg.To.Add(new MailAddress("aruncvonline@gmail.com"));
             msg.Subject = msgSubject;
             msg.IsBodyHtml = true;
             msg.Body = string.Format("<html><head></head><body><b>" + msgFName + "</b>" +
