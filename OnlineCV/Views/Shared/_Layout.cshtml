@@ -15,8 +15,8 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
+                
+                <div class="col-md-5 hidden-sm col-xs-12 col-lg-offset-1">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -30,7 +30,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="navbar-brand hidden-md hidden-xs hidden-lg">
+                        <a href="http://ae.linkedin.com/in/arunpallikandath"><img src="~/Images/photo.png" class="logo" /></a>
+                        @Html.ActionLink("{{mycv.fullname}}", "Index", "Home", new { area = "" })
+
+                    </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right menuMain">
                             <li id="l1"><a class="active menuItem" href="#home" data-toggle="tab">HOME</a></li>
