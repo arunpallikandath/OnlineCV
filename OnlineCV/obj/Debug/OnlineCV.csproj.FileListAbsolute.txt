@@ -53,3 +53,10 @@ c:\users\nisahnth\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\Mi
 c:\users\nisahnth\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\obj\Debug\OnlineCV.csprojResolveAssemblyReference.cache
 c:\users\nisahnth\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\obj\Debug\OnlineCV.dll
 c:\users\nisahnth\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\obj\Debug\OnlineCV.pdb
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\BeginCollectionItem.dll
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Net.Http.Formatting.dll
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Web.Http.dll
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Web.Http.WebHost.dll
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Net.Http.Formatting.xml
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Web.Http.xml
+C:\Users\NISAHNTH\documents\visual studio 2013\Projects\OnlineCV\OnlineCV\bin\System.Web.Http.WebHost.xml

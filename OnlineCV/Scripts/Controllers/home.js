@@ -1,6 +1,16 @@
 ﻿
 /*
-    Javascript for controller specific functionalities
+    Javascript for home controller releated pages
+*/
+
+/*
+* Call ajax function when contact form is submitted
+*
+* -------------------------------------------------------------------------------
+* Description       Author      Date           Comments
+ * -------------------------------------------------------------------------------
+* Created           Arun        17-Oct-2015    
+* -------------------------------------------------------------------------------
 */
 
 $(document).ready(function () {

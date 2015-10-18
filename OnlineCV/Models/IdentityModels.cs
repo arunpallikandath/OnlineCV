@@ -29,5 +29,7 @@ namespace OnlineCV.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<OnlineCV.CvMaster> CvMasters { get; set; }
     }
 }

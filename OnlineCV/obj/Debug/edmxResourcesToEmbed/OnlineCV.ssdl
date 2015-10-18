@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CvMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="home_phone" Type="varchar" MaxLength="13" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="image" Type="image" />
+    <Property Name="summary" Type="nvarchar(max)" />
+    <Property Name="cv_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="image_type" Type="varchar" MaxLength="50" />
+    <Property Name="photo_path" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cvId" Type="int" Nullable="false" />
+    <Property Name="company_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="period" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Expertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cvId" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cvId" Type="int" Nullable="false" />
+    <Property Name="category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Experience_CVMaster">
+    <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+    <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CvMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="cvId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expertise_CvMaster">
+    <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+    <End Role="Expertise" Type="Self.Expertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CvMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Expertise">
+        <PropertyRef Name="cvId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skills_CVMaster">
+    <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+    <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CvMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Skills">
+        <PropertyRef Name="cvId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineCVModelStoreContainer">
+    <EntitySet Name="CvMaster" EntityType="Self.CvMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expertise" EntityType="Self.Expertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Experience_CVMaster" Association="Self.FK_Experience_CVMaster">
+      <End Role="CvMaster" EntitySet="CvMaster" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expertise_CvMaster" Association="Self.FK_Expertise_CvMaster">
+      <End Role="CvMaster" EntitySet="CvMaster" />
+      <End Role="Expertise" EntitySet="Expertise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skills_CVMaster" Association="Self.FK_Skills_CVMaster">
+      <End Role="CvMaster" EntitySet="CvMaster" />
+      <End Role="Skills" EntitySet="Skills" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

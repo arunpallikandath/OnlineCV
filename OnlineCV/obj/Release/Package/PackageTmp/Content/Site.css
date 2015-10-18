@@ -1,0 +1,203 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
+    font-family: DINbek-Regular
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    max-width: 960px;
+    min-height: 540px;
+
+}
+
+/* Little customisation of bootstrap classes*/
+.navbar {
+	height: 50px;
+    background-color: #3b3939;
+
+}
+/* Collapse for mobile versions */
+.navbar-collapse {
+    background-color: #3b3939;
+}
+
+.navbar-brand > a {
+    padding-left: 0px;
+    padding-right:0px;
+    color:white;
+    font-size:18px;
+    letter-spacing:3px;
+   text-transform:uppercase;
+}
+
+.navbar-brand .navbar-inverse > a {
+    padding-left: 0px;
+    padding-right:0px;
+    color:white;
+    font-size:18px;
+    letter-spacing:5px;
+
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus{
+   
+     background-color:#3b3939;
+     border:0px,0px,2px,0px solid;
+     border-color: white;
+}
+
+li.cvKeySkills.ng-scope 
+{
+    padding-bottom:24px;
+}
+
+.footer {
+    background-color: #cccccc;
+    max-height:40px;
+    margin-bottom: 0px;
+    padding-bottom:0px;
+
+}
+
+.footer-content {
+    vertical-align: middle;
+    text-align:right;
+    padding-right: 10px;
+    line-height: 24px;
+    
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* Custom style classes*/
+
+.logo {
+    margin-top:-10px;
+	width: 40px;
+	height: auto;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url("../Images/Photo.png") no-repeat;
+	}
+
+.menuMain {
+padding-top: 15px;
+}
+.menuItem {
+padding-top: 0px !important;
+padding-bottom:0px !important;
+color:white;
+font-size:15px;
+font-family:DINbek-Regular;
+text-transform:uppercase;
+	
+}
+
+.cvTitle{
+    font-size : 36px;
+    font-family: DINbek-Regular;
+    text-transform:uppercase;
+    line-height:42px;
+}
+
+.cvDesc{
+
+    font-family: 'Adobe Caslon Pro';
+    font-size: 18px;
+    font-style: italic;
+    overflow:auto;
+    line-height:22px;
+}
+
+.skillDesc{
+
+    font-family: 'Adobe Caslon Pro';
+    font-size: 18px;
+    overflow:auto;
+}
+.cvSubTitle{
+
+    font-family: 'DINbek Bold';
+    font-size: 18px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+
+}
+.cvKeyPoints > a{
+    color: black;
+}
+.cvKeyPoints{
+
+    font-family: DINbek-Regular;
+    font-size: 15px;
+    list-style:none;
+    text-transform:uppercase;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    line-height:22px;
+    
+}
+
+.cvButton{
+
+    font-family: 'DINbek Bold';
+    font-size: 15px;
+    text-transform:uppercase;
+    color:white;
+    background-color:#808080;
+
+}
+
+.cvKeySkills{
+
+    font-family: DINbek-Regular;
+    font-size: 15px;
+    list-style:none;
+    padding-left: 0px;
+    padding-bottom: 24px;
+    
+}
+
+.spanHeight25{
+    height:25px;
+}
+
+.spanHeight20{
+    height:20px;
+
+}
+/* Custom fonts */
+@font-face {
+    font-family: 'DINbek Bold';
+    src: url('../fonts/DINbek Bold.ttf') format('truetype')
+
+}
+
+@font-face {
+    font-family: 'DINbek-Regular';
+    src: url('../fonts/DINBek-Regular.ttf') format('truetype')
+
+}
+
+@font-face {
+    font-family: 'Adobe Caslon Pro';
+    src: url('../fonts/Adobe Caslon Pro.ttf') format('truetype');
+}

@@ -8,15 +8,22 @@
 * -------------------------------------------------------------------------------
 */
 var HomeController = function ($scope, $http) {
-    $scope.mycv = null;
-    $http.get('Content/mycv.json')
-        .success(function (data) {
-            $scope.mycv = data;
-        })
-        .error(function (data, status, error, config) {
-            //alert(error);
-            $scope.mycv = [{ loadstatus: "error", description: "Could not load json   data" }];
-        });
+
+    $scope.init = function (cvName) {
+
+        $scope.mycv = null;
+        //
+        $http.get('api/CvMasters/' + cvName)
+            .success(function (data) {
+                alert(data);
+                var objCV = JSON.parse(data);
+                $scope.mycv = objCV;
+            })
+            .error(function (data, status, error, config) {
+                // alert(error);
+                $scope.mycv = [{ loadstatus: "error", description: "Could not load json   data" }];
+            });
+    };
     
 }
 // The $inject property of every controller 

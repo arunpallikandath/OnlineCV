@@ -11,7 +11,8 @@
     <!-- Initiates the angular app, controller and to load the scope -->
     @Scripts.Render("~/bundles/onlinecv-angular")
 </head>
-<body ng-app="onlineCVApp" ng-controller="HomeController">
+<!-- Passing the cvName to AnjgularJS for getting particular CV details via ajax call -->
+<body ng-app="onlineCVApp" ng-controller="HomeController" ng-init="init('@ViewBag.cvName')">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="row">
@@ -24,7 +25,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="navbar-brand form-inline">
-                            <a href="http://ae.linkedin.com/in/arunpallikandath"><img src="~/Images/photo.png" class="logo" /></a>
+                            <a href="#"><img src="{{mycv.photo_path}}" class="logo" /></a>
                             @Html.ActionLink("{{mycv.fullname}}", "Index", "Home", new { area = "" })
 
                         </div>
@@ -32,7 +33,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="navbar-brand hidden-md hidden-xs hidden-lg">
-                        <a href="http://ae.linkedin.com/in/arunpallikandath"><img src="~/Images/photo.png" class="logo" /></a>
+                        <a href="#"><img src="{{mycv.photo_path}}" class="logo" /></a>
                         @Html.ActionLink("{{mycv.fullname}}", "Index", "Home", new { area = "" })
 
                     </div>
@@ -85,7 +86,7 @@
     <!-- Reference to cdnjs, since the requirement requires -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/home")
+    @Scripts.Render("~/bundles/controllers")
 
 </body>
 

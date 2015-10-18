@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineCVModelStoreContainer" CdmEntityContainer="OnlineCVEntities">
+    <EntitySetMapping Name="CvMasters">
+      <EntityTypeMapping TypeName="OnlineCVModel.CvMaster">
+        <MappingFragment StoreEntitySet="CvMaster">
+          <ScalarProperty Name="photo_path" ColumnName="photo_path" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="cv_name" ColumnName="cv_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiences">
+      <EntityTypeMapping TypeName="OnlineCVModel.Experience">
+        <MappingFragment StoreEntitySet="Experience">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cvId" ColumnName="cvId" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="period" ColumnName="period" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expertises">
+      <EntityTypeMapping TypeName="OnlineCVModel.Expertise">
+        <MappingFragment StoreEntitySet="Expertise">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cvId" ColumnName="cvId" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="OnlineCVModel.Skill">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cvId" ColumnName="cvId" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

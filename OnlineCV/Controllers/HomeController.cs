@@ -21,7 +21,25 @@ namespace OnlineCV.Controllers
          * Created           Arun        12-Oct-2015    
          * -------------------------------------------------------------------------------
          */
-        public ActionResult Index()
+        public ActionResult Index(String cvName)
+        {
+            ViewBag.cvName = cvName;
+            if(String.IsNullOrWhiteSpace(cvName))
+            {
+                return View("Home");
+            }
+            return View();
+        }
+        /*
+         * Landing page
+         * 
+         * -------------------------------------------------------------------------------
+         * Description       Author      Date           Comments
+         * -------------------------------------------------------------------------------
+         * Created           Arun        17-Oct-2015    
+         * -------------------------------------------------------------------------------
+         */
+        public ActionResult Home()
         {
             return View();
         }

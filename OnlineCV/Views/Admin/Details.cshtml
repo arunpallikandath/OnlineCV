@@ -1,0 +1,82 @@
+﻿@model OnlineCV.CvMaster
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>CvMaster</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.mobile)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.mobile)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.home_phone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.home_phone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.summary)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.summary)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.cv_name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cv_name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fullname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fullname)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

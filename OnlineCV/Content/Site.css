@@ -13,7 +13,6 @@
     min-height: 540px;
 
 }
-
 /* Little customisation of bootstrap classes*/
 .navbar {
 	height: 50px;
@@ -33,6 +32,7 @@
     letter-spacing:3px;
    text-transform:uppercase;
 }
+
 .navbar-brand .navbar-inverse > a {
     padding-left: 0px;
     padding-right:0px;

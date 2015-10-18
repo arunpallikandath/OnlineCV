@@ -12,10 +12,9 @@
             </div>
         </div>
         <div class="row">
-
             <div class="col-md-6 col-sm-12 ">
                 <div class="cvDesc">
-                    {{mycv.description}}
+                    {{mycv.summary}}
                 </div>
                 <div class="spanHeight20"></div>
                 <div>
@@ -24,20 +23,17 @@
             </div>
             <div class="co-md-2 hidden-xs"></div>
             <div class="col-md-4 col-sm-12">
-                    <div class="cvSubTitle">KEY EXPERTISE
-                        <hr style="height:3px;width:5%;background-color:black;margin-left:0px; margin-top:10px;margin-bottom:10px">
-                    </div>
+                <div class="cvSubTitle">KEY EXPERTISE
+                    <hr style="height:3px;width:5%;background-color:black;margin-left:0px; margin-top:10px;margin-bottom:10px">
+                </div>
                     
-                    <ul class="cvKeyPoints">
-                        <li class="cvKeyPoints text-uppercase" ng-repeat="keyArea in mycv.keyexpertise">
-                            <a href="#">{{keyArea}}</a>
-                        </li>
-                    </ul>
+                <ul class="cvKeyPoints">
+                    <li class="cvKeyPoints text-uppercase" ng-repeat="keyArea in mycv.Expertises">
+                        <a href="#">{{keyArea.description}}</a>
+                    </li>
+                </ul>
             </div>
-            
-
-        </div>
-        
+       </div>       
     </div>
 </div>
 

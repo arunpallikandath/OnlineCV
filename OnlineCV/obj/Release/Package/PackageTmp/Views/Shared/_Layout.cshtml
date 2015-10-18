@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - OnlineCV</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Reference to cdnjs. Note: It can referenced internally and bundled -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <!-- Initiates the angular app, controller and to load the scope -->
+    @Scripts.Render("~/bundles/onlinecv-angular")
+</head>
+<body ng-app="onlineCVApp" ng-controller="HomeController">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-5 hidden-sm col-xs-12 col-lg-offset-1">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand form-inline">
+                            <a href="http://ae.linkedin.com/in/arunpallikandath"><img src="~/Images/photo.png" class="logo" /></a>
+                            @Html.ActionLink("{{mycv.fullname}}", "Index", "Home", new { area = "" })
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="navbar-brand hidden-md hidden-xs hidden-lg">
+                        <a href="http://ae.linkedin.com/in/arunpallikandath"><img src="~/Images/photo.png" class="logo" /></a>
+                        @Html.ActionLink("{{mycv.fullname}}", "Index", "Home", new { area = "" })
+
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right menuMain">
+                            <li id="l1"><a class="active menuItem" href="#home" data-toggle="tab">HOME</a></li>
+                            <li id="l2"><a class="menuItem" href="#menuSkills" data-toggle="tab">SKILLS</a></li>
+                            <li id="l3"><a class="menuItem" href="#menuExperience" data-toggle="tab">EXPERIENCE</a></li>
+                            <li id="l4"><a class="menuItem" href="#menuContact" data-toggle="tab">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="menuSkills" class="tab-pane fade">
+            <div class="container body-content">
+                @{Html.RenderAction("Skills", "Home"); }
+            </div>
+        </div>
+        <div id="menuExperience" class="tab-pane fade">
+            <div class="container body-content">
+                @{Html.RenderAction("Experience", "Home"); }
+            </div>
+        </div>
+        <div id="menuContact" class="tab-pane fade">
+                <form id="frmContact" action="Home/ContactSave" method="post" name="frmContact">
+                    <div class="container body-content">
+                        @{Html.RenderAction("Contact", "Home"); }
+                    </div>
+                    </form>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                &copy; 2015 Arun Kumar Narayanan. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/respond")
+    <!-- Reference to cdnjs, since the requirement requires -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/home")
+
+</body>
+
+</html>

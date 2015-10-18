@@ -32,8 +32,10 @@ namespace OnlineCV
             bundles.Add(onlineCVAngularBundle);
             //
             // Load OnlineCV Home controller specific scripts
-            var homeBundle = new ScriptBundle("~/bundles/home").Include(
-                   "~/Scripts/Controllers/home.js"
+            var homeBundle = new ScriptBundle("~/bundles/controllers").Include(
+                   "~/Scripts/Controllers/admin.js",
+                   "~/Scripts/Controllers/home.js",
+                   "~/Scripts/Controllers/common.js"
                   );
             bundles.Add(homeBundle);
 

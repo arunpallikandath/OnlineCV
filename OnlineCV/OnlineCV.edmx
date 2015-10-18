@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnlineCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CvMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="home_phone" Type="varchar" MaxLength="13" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="image" Type="image" />
+          <Property Name="summary" Type="nvarchar(max)" />
+          <Property Name="cv_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="image_type" Type="varchar" MaxLength="50" />
+          <Property Name="photo_path" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Experience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cvId" Type="int" Nullable="false" />
+          <Property Name="company_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="period" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Expertise">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cvId" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skills">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cvId" Type="int" Nullable="false" />
+          <Property Name="category" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Experience_CVMaster">
+          <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+          <End Role="Experience" Type="Self.Experience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Experience">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expertise_CvMaster">
+          <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+          <End Role="Expertise" Type="Self.Expertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expertise">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_CVMaster">
+          <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+          <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Skills">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineCVModelStoreContainer">
+          <EntitySet Name="CvMaster" EntityType="Self.CvMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Experience" EntityType="Self.Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expertise" EntityType="Self.Expertise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Experience_CVMaster" Association="Self.FK_Experience_CVMaster">
+            <End Role="CvMaster" EntitySet="CvMaster" />
+            <End Role="Experience" EntitySet="Experience" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expertise_CvMaster" Association="Self.FK_Expertise_CvMaster">
+            <End Role="CvMaster" EntitySet="CvMaster" />
+            <End Role="Expertise" EntitySet="Expertise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_CVMaster" Association="Self.FK_Skills_CVMaster">
+            <End Role="CvMaster" EntitySet="CvMaster" />
+            <End Role="Skills" EntitySet="Skills" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineCVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CvMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="home_phone" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Expertises" Relationship="Self.FK_Expertise_CvMaster" FromRole="CvMaster" ToRole="Expertise" />
+          <NavigationProperty Name="Experiences" Relationship="OnlineCVModel.FK_Experience_CVMaster" FromRole="CvMaster" ToRole="Experience" />
+          <NavigationProperty Name="Skills" Relationship="OnlineCVModel.FK_Skills_CVMaster" FromRole="CvMaster" ToRole="Skill" />
+          <Property Name="cv_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="photo_path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Experience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="cvId" Type="Int32" Nullable="false" />
+          <Property Name="company_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="period" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CvMaster" Relationship="OnlineCVModel.FK_Experience_CVMaster" FromRole="Experience" ToRole="CvMaster" />
+        </EntityType>
+        <EntityType Name="Expertise">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="cvId" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CvMaster" Relationship="Self.FK_Expertise_CvMaster" FromRole="Expertise" ToRole="CvMaster" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="cvId" Type="Int32" Nullable="false" />
+          <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CvMaster" Relationship="OnlineCVModel.FK_Skills_CVMaster" FromRole="Skill" ToRole="CvMaster" />
+        </EntityType>
+        <Association Name="FK_Expertise_CvMaster">
+          <End Role="CvMaster" Type="Self.CvMaster" Multiplicity="1" />
+          <End Role="Expertise" Type="Self.Expertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expertise">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineCVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CvMasters" EntityType="Self.CvMaster" />
+          <EntitySet Name="Experiences" EntityType="Self.Experience" />
+          <EntitySet Name="Expertises" EntityType="Self.Expertise" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+          <AssociationSet Name="FK_Expertise_CvMaster" Association="Self.FK_Expertise_CvMaster">
+            <End Role="CvMaster" EntitySet="CvMasters" />
+            <End Role="Expertise" EntitySet="Expertises" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Experience_CVMaster" Association="OnlineCVModel.FK_Experience_CVMaster">
+            <End Role="CvMaster" EntitySet="CvMasters" />
+            <End Role="Experience" EntitySet="Experiences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Skills_CVMaster" Association="OnlineCVModel.FK_Skills_CVMaster">
+            <End Role="CvMaster" EntitySet="CvMasters" />
+            <End Role="Skill" EntitySet="Skills" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Experience_CVMaster">
+          <End Type="OnlineCVModel.CvMaster" Role="CvMaster" Multiplicity="1" />
+          <End Type="OnlineCVModel.Experience" Role="Experience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Experience">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Skills_CVMaster">
+          <End Type="OnlineCVModel.CvMaster" Role="CvMaster" Multiplicity="1" />
+          <End Type="OnlineCVModel.Skill" Role="Skill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CvMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Skill">
+              <PropertyRef Name="cvId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineCVModelStoreContainer" CdmEntityContainer="OnlineCVEntities">
+          <EntitySetMapping Name="CvMasters">
+            <EntityTypeMapping TypeName="OnlineCVModel.CvMaster">
+              <MappingFragment StoreEntitySet="CvMaster">
+                <ScalarProperty Name="photo_path" ColumnName="photo_path" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="cv_name" ColumnName="cv_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Experiences">
+            <EntityTypeMapping TypeName="OnlineCVModel.Experience">
+              <MappingFragment StoreEntitySet="Experience">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cvId" ColumnName="cvId" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expertises">
+            <EntityTypeMapping TypeName="OnlineCVModel.Expertise">
+              <MappingFragment StoreEntitySet="Expertise">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cvId" ColumnName="cvId" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="OnlineCVModel.Skill">
+              <MappingFragment StoreEntitySet="Skills">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cvId" ColumnName="cvId" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
