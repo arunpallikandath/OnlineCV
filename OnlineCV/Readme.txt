@@ -1,5 +1,5 @@
 ﻿
-This project OnlineCV has been developed as a part of Tigerspike recruitment process.
+
 
 The OnlineCV project is developed on Visual studio express for web 2013 mainly using below technologies.
 
